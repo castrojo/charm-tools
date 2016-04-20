@@ -1,0 +1,16 @@
+name: charm-tools
+version: 1
+summary: Tools for charm authors and maintainers
+description: This is a collection of tools to make writing Juju charms easier. See Juju's home page for more information.
+apps:
+  charm:
+    command: ./bin/charm
+parts:
+  charm-tools:
+    plugin: python2
+    source: https://github.com/juju/charm-tools
+    source-type: git
+    build-packages: [debhelper, dh-python, python-all, python-apt, python-blessings, python-cheetah, python-colander, python-jsonschema, python-jujubundlelib, python-launchpadlib, python-libcharmstore, python-markdown, python-otherstuf, python-paramiko, python-parse, python-path, python-pathspec, python-pip, python-ruamel.yaml, python-setuptools, python-simplejson, python-testresources, python-virtualenv, python-yaml]
+  make-project:
+    plugin: make
+    source: .
